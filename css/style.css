@@ -276,6 +276,24 @@ a {
     text-align: center;
   }
 
+  .main-nav ul {
+    display: flex;
+    justify-content: space-around; /* メニュー項目間のスペースを均等に配置 */
+    list-style: none; /* リストの点を削除 */
+    padding: 0; /* デフォルトのパディングを削除 */
+    margin: 0; /* デフォルトのマージンを削除 */
+  }
+
+  .main-nav li {
+    margin: 0; /* 各メニュー項目のマージンを削除 */
+  }
+
+  .main-nav a {
+    text-decoration: none; /* リンクの下線を削除 */
+    display: block; /* リンクをブロックレベル要素にする */
+    padding: 10px; /* リンクのパディングを追加 */
+  }
+
   .hero-text, .hero-image {
     flex: 1 1 100%;
   }
