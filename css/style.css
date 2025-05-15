@@ -320,6 +320,7 @@ a {
   }
 
   .menu-toggle span {
+    display: block; /* spanをブロック要素にする */
     height: 2px;
     background-color: #333;
     transition: background-color 0.3s;
@@ -336,4 +337,22 @@ a {
   .main-nav.active {
     display: block;
   }
+}
+
+.menu-toggle {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .main-nav {
+        display: none;
+    }
+
+    .main-nav.active {
+        display: block;
+    }
 }
