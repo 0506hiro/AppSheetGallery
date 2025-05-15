@@ -306,4 +306,34 @@ a {
   .demo-card {
     width: 90%;
   }
+
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .menu-toggle span {
+    height: 2px;
+    background-color: #333;
+    transition: background-color 0.3s;
+  }
+
+  .main-nav {
+    display: none;
+  }
+
+  .menu-toggle.active span {
+    background-color: #fff;
+  }
+
+  .main-nav.active {
+    display: block;
+  }
 }
