@@ -7,4 +7,12 @@ document.addEventListener("DOMContentLoaded", () => {
       menuToggle.classList.toggle("active");
     });
   }
+
+  // メインメニューを右から表示する機能を追加
+  const body = document.querySelector("body");
+  if (menuToggle && navMenu && body) {
+    menuToggle.addEventListener("click", () => {
+      body.classList.toggle("drawer-open");
+    });
+  }
 });

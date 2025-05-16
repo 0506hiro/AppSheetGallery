@@ -9,6 +9,12 @@
 <body <?php body_class(); ?>>
   <header class="site-header">
     <div class="container">
+      <div class="site-logo">
+        <?php if (has_custom_logo()) : ?>
+          <?php the_custom_logo(); ?>
+        <?php else : ?>
+          <a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a>
+        <?php endif; ?>
       <h1 class="site-title"><a href="<?php echo home_url(); ?>">coppu's_App</a></h1>
       <button class="menu-toggle">
         <span></span>
@@ -18,8 +24,8 @@
       <nav class="main-nav">
         <ul>
           <li><a href="<?php echo get_post_type_archive_link('demo_app'); ?>">サンプルページ</a></li>
-<li><a href="<?php echo esc_url( home_url( '/page-seisaku.php' ) ); ?>">制作の流れ</a></li>
-          <li><a href="<?php echo esc_url( home_url( '/page-otoiawase.php' ) ); ?>">お問合せ</a></li>
+          <li><a href="<?php echo esc_url( home_url( '/seisaku' ) ); ?>">制作の流れ</a></li>
+          <li><a href="<?php echo esc_url( home_url( '/otoiawase' ) ); ?>">お問合せ</a></li>
         </ul>
       </nav>
     </div>
