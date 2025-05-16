@@ -1,5 +1,5 @@
 /*
-Theme Name:sotugyouse
+Theme Name:sotugyouseisaku
 */
 
 @charset "UTF-8";
@@ -117,7 +117,7 @@ a {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 2rem;
-  padding: 3rem 0;
+  padding: 3rem 1rem;
   background: #f0f8ff;
   border-radius: 12px;
 }
@@ -207,7 +207,7 @@ a {
   border-radius: 10px;
   padding: 1rem;
   width: 300px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s;
 }
 
@@ -269,6 +269,23 @@ a {
   margin-bottom: 1rem;
 }
 
+.main-nav ul {
+  display: flex;
+  justify-content: space-around; /* メニュー項目間のスペースを均等に配置 */
+  list-style: none; /* リストの点を削除 */
+  padding: 0; /* デフォルトのパディングを削除 */
+  margin: 0; /* デフォルトのマージンを削除 */
+}
+
+.main-nav li {
+  margin: 0; /* 各メニュー項目のマージンを削除 */
+}
+
+.main-nav a {
+  text-decoration: none; /* リンクの下線を削除 */
+  display: block; /* リンクをブロックレベル要素にする */
+  padding: 10px; /* リンクのパディングを追加 */
+}
 /* Responsive */
 @media (max-width: 768px) {
   .hero {
@@ -276,25 +293,8 @@ a {
     text-align: center;
   }
 
-  .main-nav ul {
-    display: flex;
-    justify-content: space-around; /* メニュー項目間のスペースを均等に配置 */
-    list-style: none; /* リストの点を削除 */
-    padding: 0; /* デフォルトのパディングを削除 */
-    margin: 0; /* デフォルトのマージンを削除 */
-  }
-
-  .main-nav li {
-    margin: 0; /* 各メニュー項目のマージンを削除 */
-  }
-
-  .main-nav a {
-    text-decoration: none; /* リンクの下線を削除 */
-    display: block; /* リンクをブロックレベル要素にする */
-    padding: 10px; /* リンクのパディングを追加 */
-  }
-
-  .hero-text, .hero-image {
+  .hero-text,
+  .hero-image {
     flex: 1 1 100%;
   }
 
@@ -340,19 +340,19 @@ a {
 }
 
 .menu-toggle {
-    display: none;
+  display: none;
 }
 
 @media (max-width: 768px) {
-    .menu-toggle {
-        display: flex;
-    }
+  .menu-toggle {
+    display: flex;
+  }
 
-    .main-nav {
-        display: none;
-    }
+  .main-nav {
+    display: none;
+  }
 
-    .main-nav.active {
-        display: block;
-    }
+  .main-nav.active {
+    display: block;
+  }
 }
