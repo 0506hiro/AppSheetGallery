@@ -308,7 +308,6 @@ a {
   border-radius: 5px; /* アクティブなリンクのフォーカス時の角丸 */
 }
 
-
 /* Responsive */
 @media (max-width: 768px) {
   .hero {
