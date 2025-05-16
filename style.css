@@ -271,19 +271,19 @@ a {
 
 .main-nav ul {
   display: flex;
-  justify-content: space-around; /* メニュー項目間のスペースを均等に配置 */
+  justify-content: flex-start; /* メニュー項目間のスペースを均等に配置 */
   list-style: none; /* リストの点を削除 */
   padding: 0; /* デフォルトのパディングを削除 */
   margin: 0; /* デフォルトのマージンを削除 */
 }
 
 .main-nav li {
-  margin: 0; /* 各メニュー項目のマージンを削除 */
+  margin: 0 10px; /* 各メニュー項目のマージンを削除 */
 }
 
 .main-nav a {
   text-decoration: none; /* リンクの下線を削除 */
-  display: block; /* リンクをブロックレベル要素にする */
+  display: inline-block; /* リンクをブロックレベル要素にする */
   padding: 10px; /* リンクのパディングを追加 */
 }
 
@@ -358,11 +358,31 @@ a {
 
   .main-nav.active {
     display: block;
+    position: absolute;
+    top: 60px; /* ヘッダーの高さに合わせて調整 */
+    right: 0;
+    width: 200px; /* メニューの幅 */
+    background-color: #f0f0f0; /* 背景色 */
+    padding: 10px;
+    border-radius: 5px;
+    text-align: right; /* メニュー項目を右寄せ */
+  }
+
+  .main-nav.active ul {
+    flex-direction: column; /* メニュー項目を縦並びにする */
+    align-items: flex-end; /* メニュー項目を右寄せにする */
+  }
+
+  .main-nav.active li {
+    margin: 5px 0; /* メニュー項目の上下マージン */
   }
 }
 
 .menu-toggle {
   display: none;
+  position: absolute;
+  top: 20px; /* ヘッダーの高さに合わせて調整 */
+  right: 20px;
 }
 
 @media (max-width: 768px) {

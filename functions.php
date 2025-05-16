@@ -31,3 +31,13 @@ function create_demo_app_post_type() {
   );
 }
 add_action('init', 'create_demo_app_post_type');
+
+function filter_menu_items( $items, $args ) {
+  foreach ( $items as $item ) {
+    if ( $item->title == 'ヘッダーのサンプルページ' ) {
+      $item->url = get_post_type_archive_link( 'demo_app' );
+    }
+  }
+  return $items;
+}
+add_filter( 'wp_nav_menu_objects', 'filter_menu_items', 10, 2 );
