@@ -8,11 +8,6 @@ function coppuapp_setup() {
 }
 add_action('after_setup_theme', 'coppuapp_setup');
 
-function coppuapp_scripts() {
-  wp_enqueue_style('main-style', get_template_directory_uri() . '/css/style.css');
-  wp_enqueue_script('main-js', get_template_directory_uri() . '/js/script.js', [], null, true);
-}
-add_action('wp_enqueue_scripts', 'coppuapp_scripts');
 
 function create_demo_app_post_type() {
   register_post_type('demo_app',
