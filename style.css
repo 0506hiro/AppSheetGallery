@@ -286,6 +286,29 @@ a {
   display: block; /* リンクをブロックレベル要素にする */
   padding: 10px; /* リンクのパディングを追加 */
 }
+
+.main-nav a:hover {
+  background-color: #007acc; /* ホバー時の背景色 */
+  color: white; /* ホバー時の文字色 */
+  border-radius: 5px; /* ホバー時の角丸 */
+}
+.main-nav a.active {
+  background-color: #005fa3; /* アクティブなリンクの背景色 */
+  color: white; /* アクティブなリンクの文字色 */
+  border-radius: 5px; /* アクティブなリンクの角丸 */
+}
+.main-nav a.active:hover {
+  background-color: #005fa3; /* アクティブなリンクのホバー時の背景色 */
+  color: white; /* アクティブなリンクのホバー時の文字色 */
+  border-radius: 5px; /* アクティブなリンクのホバー時の角丸 */
+}
+.main-nav a.active:focus {
+  background-color: #005fa3; /* アクティブなリンクのフォーカス時の背景色 */
+  color: white; /* アクティブなリンクのフォーカス時の文字色 */
+  border-radius: 5px; /* アクティブなリンクのフォーカス時の角丸 */
+}
+
+
 /* Responsive */
 @media (max-width: 768px) {
   .hero {
