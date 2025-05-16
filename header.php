@@ -18,8 +18,8 @@
       <nav class="main-nav">
         <ul>
           <li><a href="<?php echo get_post_type_archive_link('demo_app'); ?>">サンプルページ</a></li>
-<li><a href="<?php echo esc_url( get_permalink( SEISAKU_PAGE_ID ) ); ?>">制作の流れ</a></li>
-          <li><a href="<?php echo esc_url( get_permalink( OTOIAWASE_PAGE_ID ) ); ?>">お問合せ</a></li>
+<li><a href="<?php echo esc_url( home_url( '/page-seisaku.php' ) ); ?>">制作の流れ</a></li>
+          <li><a href="<?php echo esc_url( home_url( '/page-otoiawase.php' ) ); ?>">お問合せ</a></li>
         </ul>
       </nav>
     </div>

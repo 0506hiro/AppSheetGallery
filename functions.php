@@ -42,5 +42,5 @@ function filter_menu_items( $items, $args ) {
 }
 add_filter( 'wp_nav_menu_objects', 'filter_menu_items', 10, 2 );
 
-define( 'SEISAKU_PAGE_ID', 10 );
-define( 'OTOIAWASE_PAGE_ID', 11 );
+define( 'SEISAKU_PAGE_ID', 15 );
+define( 'OTOIAWASE_PAGE_ID', 16 );
