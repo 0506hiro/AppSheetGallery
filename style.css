@@ -13,7 +13,7 @@ body {
 .demo-single {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: flex-start;
 }
 
@@ -23,7 +23,7 @@ body {
 
 .demo-video {
   width: 50%;
-  max-width: 640px; /* 動画の最大幅 */
+  max-width: 350px; /* 動画の最大幅 */
   margin: 0 auto;
   border: 10px solid #000; /* 携帯の枠 */
   border-radius: 20px;
