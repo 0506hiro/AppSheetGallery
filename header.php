@@ -6,7 +6,7 @@
   <title><?php wp_title('|', true, 'right'); ?></title>
   <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> data-drawer-open="false">
   <header class="site-header">
     <div class="container">
       <div class="site-logo">
