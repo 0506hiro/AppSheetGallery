@@ -7,7 +7,17 @@
       <a href="<?php echo esc_url( get_post_type_archive_link('demo_app') ); ?>" class="cta-button">デモアプリを見る</a>
     </div>
     <div class="hero-image">
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/hero-demo.png" alt="デモアプリ紹介画像">
+      <?php 
+        $movie_url = get_latest_demo_movie_url();
+        if ($movie_url):
+      ?>
+        <video autoplay loop muted playsinline width="640" height="360">
+          <source src="<?php echo esc_url($movie_url); ?>" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      <?php else: ?>
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/hero-demo.png" alt="デモアプリ紹介画像">
+      <?php endif; ?>
     </div>
   </section>
 
