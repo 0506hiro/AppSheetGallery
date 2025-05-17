@@ -12,7 +12,7 @@
         if ( $demo_video ) :
       ?>
         <div class="demo-video">
-          <video width="640" height="360" controls>
+          <video width="320" height="180" controls>
             <source src="<?php echo esc_url( $demo_video ); ?>" type="video/mp4">
             Your browser does not support the video tag.
           </video>
