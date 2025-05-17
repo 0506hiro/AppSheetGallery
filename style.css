@@ -9,6 +9,32 @@ body {
   z-index: 1;
 }
 
+/* single-demo_app.php */
+.demo-single {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.demo-content-wrapper {
+  width: 50%;
+}
+
+.demo-video {
+  width: 50%;
+  max-width: 640px; /* 動画の最大幅 */
+  margin: 0 auto;
+  border: 10px solid #000; /* 携帯の枠 */
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.demo-video video {
+  width: 100%;
+  height: auto;
+}
+
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;

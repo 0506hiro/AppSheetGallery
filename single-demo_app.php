@@ -2,8 +2,11 @@
 <main class="single container">
   <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
     <article class="demo-single">
-      <h1><?php the_title(); ?></h1>
-      <div class="demo-content"><?php the_content(); ?></div>
+    <div class="demo-single">
+      <div class="demo-content-wrapper">
+        <h1><?php the_title(); ?></h1>
+        <div class="demo-content"><?php the_content(); ?></div>
+      </div>
       <?php
         $demo_video = get_post_meta( get_the_ID(), '_demo_video', true );
         if ( $demo_video ) :
@@ -15,7 +18,7 @@
           </video>
         </div>
       <?php endif; ?>
-    </article>
+    </div>
   <?php endwhile; endif; ?>
 </main>
 <?php get_footer(); ?>
