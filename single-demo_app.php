@@ -4,7 +4,7 @@
     <article class="demo-single">
     <div class="demo-single">
       <div class="demo-content-wrapper">
-        <h1><?php the_title(); ?></h1>
+<h1 class="demo-title"><?php the_title(); ?></h1>
         <div class="demo-content"><?php the_content(); ?></div>
       </div>
       <?php
