@@ -7,12 +7,18 @@ document.addEventListener("DOMContentLoaded", () => {
       menuToggle.classList.toggle("active");
     });
   }
+});
 
-  // メインメニューを右から表示する機能を追加
-  const body = document.querySelector("body");
-  if (menuToggle && navMenu && body) {
-    menuToggle.addEventListener("click", () => {
-      body.classList.toggle("drawer-open");
+// メインメニューを右から表示する機能を追加
+document.addEventListener("DOMContentLoaded", function () {
+  const menuToggle = document.querySelector(".menu-toggle");
+  const mainNav = document.querySelector(".main-nav");
+
+  if (menuToggle && mainNav) {
+    menuToggle.addEventListener("click", function (e) {
+      e.preventDefault();
+      this.classList.toggle("is__active");
+      mainNav.classList.toggle("is__active");
     });
   }
 });

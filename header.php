@@ -15,6 +15,7 @@
         <?php else : ?>
           <a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a>
         <?php endif; ?>
+      </div>
       <h1 class="site-title"><a href="<?php echo home_url(); ?>">coppu's_App</a></h1>
       <button class="menu-toggle">
         <span></span>

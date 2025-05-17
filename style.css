@@ -381,7 +381,6 @@ a {
 .menu-toggle {
   display: none;
   position: absolute;
-  top: 20px; /* ヘッダーの高さに合わせて調整 */
   right: 20px;
 }
 
@@ -422,7 +421,7 @@ body.drawer-open .main-nav {
   transform: translateX(0);
 }
 
-.main-nav {
+.drawer-open .main-nav {
   position: fixed;
   top: 0;
   right: 0;
