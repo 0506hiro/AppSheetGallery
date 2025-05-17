@@ -12,7 +12,7 @@ add_action('after_setup_theme', 'coppuapp_setup');
 
 function coppus_app_enqueue_styles() {
   wp_enqueue_style('main-style', get_stylesheet_uri());
-  wp_enqueue_script('main-script', get_template_directory_uri() . '/assets/js/script.js', [], null, true);
+wp_enqueue_script('main-script', get_template_directory_uri() . '/js/script.js', [], null, true);
 }
 add_action('wp_enqueue_scripts', 'coppus_app_enqueue_styles');
 
@@ -30,4 +30,3 @@ function create_demo_app_post_type() {
     ]
   );
 }
-
