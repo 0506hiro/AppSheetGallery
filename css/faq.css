@@ -1,0 +1,22 @@
+/* FAQ */
+.faq {
+  margin: 3rem 0;
+}
+
+.faq h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+  text-align: center;
+}
+
+.faq dt {
+  font-weight: bold;
+  margin-top: 1rem;
+  color: #007acc;
+}
+
+.faq dd {
+  margin-left: 1rem;
+  margin-bottom: 0.5rem;
+}

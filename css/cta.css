@@ -1,0 +1,13 @@
+/* CTA */
+.cta {
+  text-align: center;
+  padding: 3rem 0;
+  background: #e6f3ff;
+  border-radius: 10px;
+  margin-top: 4rem;
+}
+
+.cta h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}

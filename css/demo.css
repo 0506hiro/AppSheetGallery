@@ -1,0 +1,48 @@
+/* Demo Preview */
+.demo-preview {
+  margin: 4rem 0;
+}
+
+.demo-preview h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #007acc;
+  text-align: center;
+}
+
+.demo-grid {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.demo-card {
+  background: #f8f8f8;
+  border-radius: 10px;
+  padding: 1rem;
+  width: 300px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.demo-card:hover {
+  transform: translateY(-5px);
+}
+
+.demo-thumbnail img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.demo-card h3 {
+  margin-top: 0.8rem;
+  font-size: 1.3rem;
+  color: #007acc;
+}
+
+.demo-card p {
+  font-size: 0.95rem;
+  color: #555;
+}
