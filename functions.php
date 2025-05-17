@@ -27,6 +27,9 @@ function create_demo_app_post_type() {
       'has_archive' => true,
       'supports' => ['title', 'editor', 'thumbnail'],
       'rewrite' => ['slug' => 'demo-apps'],
+      'menu_position' => 5,
+      'menu_icon' => 'dashicons-smartphone',
     ]
   );
 }
+add_action('init', 'create_demo_app_post_type');
