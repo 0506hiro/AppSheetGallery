@@ -4,9 +4,10 @@
  */
 get_header();
 ?>
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/page-otoiawase.css">
 
 <main>
-  <section>
+  <section class="contact-section">
     <div class="container">
       <div class="contact">
         <h1>お問合せ</h1>
