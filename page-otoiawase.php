@@ -8,8 +8,11 @@ get_header();
 <main>
   <section>
     <div class="container">
-      <h1>お問合せ</h1>
-      <p>お問合せフォームを設置します。</p>
+      <div class="contact">
+        <h1>お問合せ</h1>
+        <p>アプリの使用に関するお問合せは、下記のフォームからご連絡ください。</p>
+        <p>※デモアプリの使用にはGmailアドレスが必要です</p>
+        <p>お問合せ内容を確認後、担当者よりご連絡いたします。</p>
       <?php
         $form_id = get_contact_form_7_id_by_title( 'アプリ使用問合せ' );
         if ( $form_id ) {
@@ -18,6 +21,7 @@ get_header();
           echo '<p>Contact Form 7 フォームが見つかりません。</p>';
         }
       ?>
+      </div>
     </div>
   </section>
 </main>
