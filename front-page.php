@@ -7,7 +7,7 @@
       <a href="<?php echo esc_url( get_post_type_archive_link('demo_app') ); ?>" class="cta-button">デモアプリを見る</a>
     </div>
     <div class="hero-image">
-      <video src="<?php echo get_template_directory_uri(); ?>/img/デモ動画.MP4" autoplay loop muted width="500"></video>
+      <video src="<?php echo get_template_directory_uri(); ?>/img/デモ動画.MP4" autoplay loop muted width="320" height="180"></video>
     </div>
   </section>
 
