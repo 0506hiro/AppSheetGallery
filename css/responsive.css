@@ -1,4 +1,8 @@
 /* Responsive */
+.site-logo img.logo-sp {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .hero {
     flex-direction: column;
@@ -95,5 +99,13 @@
 
   .main-nav.active {
     display: block;
+  }
+
+  .site-logo img.logo-pc {
+    display: none;
+  }
+
+  .site-logo img.logo-sp {
+    display: inline-block;
   }
 }
