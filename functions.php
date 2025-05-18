@@ -63,3 +63,16 @@ function save_demo_app_video( $post_id ) {
 }
 add_action( 'save_post', 'save_demo_app_video' );
 
+function get_contact_form_7_id_by_title( $title ) {
+  $args = array(
+    'post_type' => 'wpcf7_contact_form',
+    'title' => $title,
+    'posts_per_page' => 1,
+    'fields' => 'ids'
+  );
+  $posts = get_posts( $args );
+  if ( $posts ) {
+    return $posts[0];
+  }
+  return null;
+}
