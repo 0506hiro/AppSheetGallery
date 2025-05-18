@@ -30,7 +30,7 @@
 }
 
 .demo-video {
-  width: 50%;
+  width: auto;
   max-width: 230px; /* 動画の最大幅 */
   margin: 0 auto;
   border: 10px solid #000; /* 携帯の枠 */

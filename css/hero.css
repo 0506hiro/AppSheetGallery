@@ -5,7 +5,7 @@
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 2rem;
-  padding: 3rem 1rem;
+  padding: 3rem 4rem;
   background: #f0f8ff;
   border-radius: 12px;
 }
@@ -40,16 +40,15 @@
 }
 
 .hero-image {
-  flex: 1 1 45%;
-}
-
-.hero-image img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
+  width: 50%;
+  max-width: 230px; /* 動画の最大幅 */
+  margin: 0 auto;
+  border: 10px solid #000; /* 携帯の枠 */
+  border-radius: 20px;
+  overflow: hidden;
 }
 
 .hero-image video {
-  border-radius: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: auto;
 }
