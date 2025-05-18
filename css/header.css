@@ -36,6 +36,9 @@ body.drawer-open .main-nav {
 }
 
 .breadcrumb-container {
-  margin-top: 10px; /* メニューの下に表示するためのマージン */
   font-size: 12px; /* メニューの文字より小さくするためのフォントサイズ */
+  width: 90%;
+  max-width: 1100px;
+  margin: 10px auto;
+  padding: 2rem 10px;
 }

@@ -35,12 +35,12 @@
           <li><a href="<?php echo esc_url( home_url( '/otoiawase' ) ); ?>">お問合せ</a></li>
         </ul>
       </nav>
-<div class="breadcrumb-container">
-<?php
-if ( function_exists('bcn_display') ) {
-    bcn_display();
-}
-?>
-</div>
+    </div>
+    <div class="breadcrumb-container">
+    <?php
+    if ( function_exists('bcn_display') ) {
+        bcn_display();
+    }
+    ?>
     </div>
   </header>
