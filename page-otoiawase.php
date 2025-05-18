@@ -10,7 +10,7 @@ get_header();
   <section class="contact-section">
     <div class="container">
       <div class="contact">
-        <h1>お問合せ</h1>
+        <h2>お問合せ</h2>
         <p>アプリの使用に関するお問合せは、下記のフォームからご連絡ください。</p>
         <p>※デモアプリの使用にはGmailアドレスが必要です</p>
         <p>お問合せ内容を確認後、担当者よりご連絡いたします。</p>

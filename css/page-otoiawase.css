@@ -4,8 +4,19 @@
   padding: 20px;
 }
 
+.contact h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.contact p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
 .contact-section {
-  padding: 50px 0;
   background-color: #f9f9f9;
 }
 
