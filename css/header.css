@@ -34,3 +34,8 @@ body.drawer-open .main-nav {
   transform: translateX(100%);
   transition: transform 0.3s ease-in-out;
 }
+
+.breadcrumb-container {
+  margin-top: 10px; /* メニューの下に表示するためのマージン */
+  font-size: 12px; /* メニューの文字より小さくするためのフォントサイズ */
+}
