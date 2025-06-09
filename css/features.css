@@ -1,0 +1,21 @@
+/* Features Section */
+.features {
+  margin: 3rem 0;
+  text-align: center;
+}
+
+.features h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.features ul {
+  list-style: none;
+  padding: 0;
+}
+
+.features li {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+}

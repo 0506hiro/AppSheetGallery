@@ -7,7 +7,7 @@
       <a href="<?php echo esc_url( get_post_type_archive_link('demo_app') ); ?>" class="cta-button">デモアプリを見る</a>
     </div>
     <div class="hero-image">
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/hero-demo.png" alt="デモアプリ紹介画像">
+      <video src="<?php echo get_template_directory_uri(); ?>/img/デモ動画.MP4" autoplay loop muted></video>
     </div>
   </section>
 
@@ -31,15 +31,17 @@
       if ($demo_query->have_posts()):
         while ($demo_query->have_posts()): $demo_query->the_post(); ?>
         <div class="demo-card">
-          <?php if (has_post_thumbnail()): ?>
-            <div class="demo-thumbnail"><?php the_post_thumbnail('medium'); ?></div>
-          <?php else: ?>
-            <div class="demo-thumbnail">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/demo-placeholder.png" alt="デモプレビュー">
-            </div>
-          <?php endif; ?>
-          <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-          <p><?php echo wp_trim_words(get_the_content(), 20); ?></p>
+          <a href="<?php the_permalink(); ?>">
+            <h3><?php the_title(); ?></h3>
+            <p><?php echo wp_trim_words(get_the_content(), 20); ?></p>
+            <?php if (has_post_thumbnail()): ?>
+              <div class="demo-thumbnail"><?php the_post_thumbnail('medium'); ?></div>
+            <?php else: ?>
+              <div class="demo-thumbnail">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/demo-placeholder.png" alt="デモプレビュー">
+              </div>
+            <?php endif; ?>
+          </a>
         </div>
       <?php endwhile; wp_reset_postdata(); endif; ?>
     </div>

@@ -2,12 +2,23 @@
 <main class="single container">
   <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
     <article class="demo-single">
-      <h1><?php the_title(); ?></h1>
-      <?php if (has_post_thumbnail()) : ?>
-        <div class="demo-thumbnail"><?php the_post_thumbnail('large'); ?></div>
+    <div class="demo-single">
+      <div class="demo-content-wrapper">
+<h1 class="demo-title"><?php the_title(); ?></h1>
+        <div class="demo-content"><?php the_content(); ?></div>
+      </div>
+      <?php
+        $demo_video = get_post_meta( get_the_ID(), '_demo_video', true );
+        if ( $demo_video ) :
+      ?>
+        <div class="demo-video">
+          <video width="320" height="180" controls>
+            <source src="<?php echo esc_url( $demo_video ); ?>" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
       <?php endif; ?>
-      <div class="demo-content"><?php the_content(); ?></div>
-    </article>
+    </div>
   <?php endwhile; endif; ?>
 </main>
 <?php get_footer(); ?>
