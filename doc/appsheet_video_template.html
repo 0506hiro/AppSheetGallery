@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AppSheet Instagram動画テンプレート</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        .template-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .template-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .template-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .video-canvas {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .opening-template {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ending-template {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-area {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 60px;
+            height: 60px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .main-title {
+            font-size: 32px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .subtitle {
+            font-size: 16px;
+            text-align: center;
+            opacity: 0.9;
+        }
+
+        .ending-cta {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255,255,255,0.2);
+            padding: 15px 30px;
+            border-radius: 25px;
+            border: 2px solid rgba(255,255,255,0.5);
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .animated-element {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .element-1 {
+            top: 10%;
+            right: 10%;
+            animation-delay: 0s;
+        }
+
+        .element-2 {
+            bottom: 20%;
+            left: 15%;
+            animation-delay: 1s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .controls {
+            background: white;
+            padding: 20px;
+            border-radius: 0 0 15px 15px;
+        }
+
+        .control-group {
+            margin-bottom: 15px;
+        }
+
+        .control-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .control-group input, .control-group select {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #e1e8ed;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .control-group input:focus, .control-group select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .color-input {
+            width: 60px !important;
+            height: 40px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .download-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .brand-guidelines {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .guidelines-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .guideline-item {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .color-palette {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 10px 0;
+        }
+
+        .color-swatch {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .font-preview {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .specifications {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .spec-list {
+            list-style: none;
+        }
+
+        .spec-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #bbdefb;
+        }
+
+        .spec-list li:last-child {
+            border-bottom: none;
+        }
+
+        .tip-box {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .tip-title {
+            font-weight: bold;
+            color: #f57c00;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 AppSheet Instagram動画テンプレート</h1>
+            <p>プロフェッショナルな動画コンテンツ制作のための統一テンプレート</p>
+        </div>
+
+        <div class="template-grid">
+            <!-- オープニングテンプレート -->
+            <div class="template-card">
+                <div class="video-canvas opening-template" id="openingCanvas">
+                    <div class="logo-area" id="openingLogo">コップ</div>
+                    <div class="animated-element element-1"></div>
+                    <div class="animated-element element-2"></div>
+                    <div style="text-align: center; z-index: 10; position: relative;">
+                        <div class="main-title" id="openingTitle">AppSheet専門家</div>
+                        <div class="subtitle" id="openingSubtitle">5分でわかるビジネスアプリ開発</div>
+                    </div>
+                </div>
+                <div class="controls">
+                    <h3>📱 オープニング設定</h3>
+                    <div class="control-group">
+                        <label>メインタイトル</label>
+                        <input type="text" id="openingTitleInput" value="AppSheet専門家" onInput="updateOpening()">
+                    </div>
+                    <div class="control-group">
+                        <label>サブタイトル</label>
+                        <input type="text" id="openingSubtitleInput" value="5分でわかるビジネスアプリ開発" onInput="updateOpening()">
+                    </div>
+                    <div class="control-group">
+                        <label>背景色</label>
+                        <input type="color" class="color-input" id="openingBgColor" value="#4facfe" onInput="updateOpening()">
+                    </div>
+                    <button class="download-btn" onclick="downloadTemplate('opening')">📥 オープニング素材ダウンロード</button>
+                </div>
+            </div>
+
+            <!-- エンディングテンプレート -->
+            <div class="template-card">
+                <div class="video-canvas ending-template" id="endingCanvas">
+                    <div class="logo-area" id="endingLogo">コップ</div>
+                    <div class="animated-element element-1"></div>
+                    <div class="animated-element element-2"></div>
+                    <div style="text-align: center; z-index: 10; position: relative;">
+                        <div class="main-title" id="endingTitle">ありがとうございました！</div>
+                        <div class="subtitle" id="endingSubtitle">AppSheetのご相談はDMまで</div>
+                    </div>
+                    <div class="ending-cta" id="endingCTA">👇 プロフィールリンクをチェック</div>
+                </div>
+                <div class="controls">
+                    <h3>🎬 エンディング設定</h3>
+                    <div class="control-group">
+                        <label>メインタイトル</label>
+                        <input type="text" id="endingTitleInput" value="ありがとうございました！" onInput="updateEnding()">
+                    </div>
+                    <div class="control-group">
+                        <label>サブタイトル</label>
+                        <input type="text" id="endingSubtitleInput" value="AppSheetのご相談はDMまで" onInput="updateEnding()">
+                    </div>
+                    <div class="control-group">
+                        <label>CTA</label>
+                        <input type="text" id="endingCTAInput" value="👇 プロフィールリンクをチェック" onInput="updateEnding()">
+                    </div>
+                    <div class="control-group">
+                        <label>背景色</label>
+                        <input type="color" class="color-input" id="endingBgColor" value="#43e97b" onInput="updateEnding()">
+                    </div>
+                    <button class="download-btn" onclick="downloadTemplate('ending')">📥 エンディング素材ダウンロード</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ブランドガイドライン -->
+        <div class="brand-guidelines">
+            <h2>🎨 AppSheet事業ブランドガイドライン</h2>
+            
+            <div class="guidelines-grid">
+                <div class="guideline-item">
+                    <h3>📐 カラーパレット</h3>
+                    <div class="color-palette">
+                        <div class="color-swatch" style="background: #4facfe;" title="メインブルー #4facfe"></div>
+                        <div class="color-swatch" style="background: #43e97b;" title="アクセントグリーン #43e97b"></div>
+                        <div class="color-swatch" style="background: #667eea;" title="ブランドパープル #667eea"></div>
+                        <div class="color-swatch" style="background: #f093fb;" title="ソフトピンク #f093fb"></div>
+                    </div>
+                    <p><strong>メイン:</strong> #4facfe (ブルー)<br>
+                    <strong>アクセント:</strong> #43e97b (グリーン)</p>
+                </div>
+
+                <div class="guideline-item">
+                    <h3>🔤 フォント</h3>
+                    <div class="font-preview" style="font-family: 'Segoe UI', sans-serif;">Segoe UI</div>
+                    <p><strong>メイン:</strong> Segoe UI<br>
+                    <strong>代替:</strong> Helvetica, Arial</p>
+                </div>
+
+                <div class="guideline-item">
+                    <h3>📱 ロゴ使用</h3>
+                    <div style="width: 80px; height: 80px; background: #4facfe; border-radius: 50%; margin: 10px auto; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 20px;">コップ</div>
+                    <p><strong>形状:</strong> 円形<br>
+                    <strong>配置:</strong> 左上角に統一</p>
+                </div>
+
+                <div class="guideline-item">
+                    <h3>⚡ アニメーション</h3>
+                    <div style="width: 60px; height: 60px; background: rgba(79, 172, 254, 0.3); border-radius: 50%; margin: 10px auto; animation: float 2s ease-in-out infinite;"></div>
+                    <p><strong>スタイル:</strong> フローティング<br>
+                    <strong>速度:</strong> 3秒サイクル</p>
+                </div>
+            </div>
+
+            <div class="specifications">
+                <h3>📊 技術仕様</h3>
+                <ul class="spec-list">
+                    <li><strong>動画サイズ:</strong> 1080×1920px (9:16 縦型)</li>
+                    <li><strong>フレームレート:</strong> 30fps</li>
+                    <li><strong>オープニング時間:</strong> 3-5秒</li>
+                    <li><strong>エンディング時間:</strong> 5-8秒</li>
+                    <li><strong>ロゴサイズ:</strong> 60×60px</li>
+                    <li><strong>メインタイトル:</strong> 32px, Bold</li>
+                    <li><strong>サブタイトル:</strong> 16px, Regular</li>
+                    <li><strong>CTA:</strong> 16px, Bold, 背景付き</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <div class="tip-title">💡 制作のポイント</div>
+                <p>• ロゴは常に左上に配置して一貫性を保つ<br>
+                • アニメーション要素で動きを演出するが、過度にならないよう注意<br>
+                • CTAは必ずエンディングに含めて行動を促す<br>
+                • ブランドカラーを効果的に使い分けて印象を統一</p>
+            </div>
+
+            <div class="tip-box">
+                <div class="tip-title">🎬 推奨制作ツール</div>
+                <p><strong>無料:</strong> CapCut, Canva, DaVinci Resolve<br>
+                <strong>有料:</strong> Adobe Premiere Pro, After Effects<br>
+                <strong>モバイル:</strong> InShot, VSCO, Adobe Premiere Rush</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function updateOpening() {
+            const title = document.getElementById('openingTitleInput').value;
+            const subtitle = document.getElementById('openingSubtitleInput').value;
+            const bgColor = document.getElementById('openingBgColor').value;
+            
+            document.getElementById('openingTitle').textContent = title;
+            document.getElementById('openingSubtitle').textContent = subtitle;
+            
+            const canvas = document.getElementById('openingCanvas');
+            canvas.style.background = `linear-gradient(135deg, ${bgColor} 0%, ${adjustColor(bgColor, -30)} 100%)`;
+        }
+
+        function updateEnding() {
+            const title = document.getElementById('endingTitleInput').value;
+            const subtitle = document.getElementById('endingSubtitleInput').value;
+            const cta = document.getElementById('endingCTAInput').value;
+            const bgColor = document.getElementById('endingBgColor').value;
+            
+            document.getElementById('endingTitle').textContent = title;
+            document.getElementById('endingSubtitle').textContent = subtitle;
+            document.getElementById('endingCTA').textContent = cta;
+            
+            const canvas = document.getElementById('endingCanvas');
+            canvas.style.background = `linear-gradient(135deg, ${bgColor} 0%, ${adjustColor(bgColor, -30)} 100%)`;
+        }
+
+        function adjustColor(hex, percent) {
+            const num = parseInt(hex.replace("#", ""), 16);
+            const amt = Math.round(2.55 * percent);
+            const R = (num >> 16) + amt;
+            const G = (num >> 8 & 0x00FF) + amt;
+            const B = (num & 0x0000FF) + amt;
+            return "#" + (0x1000000 + (R < 255 ? R < 1 ? 0 : R : 255) * 0x10000 +
+                (G < 255 ? G < 1 ? 0 : G : 255) * 0x100 +
+                (B < 255 ? B < 1 ? 0 : B : 255)).toString(16).slice(1);
+        }
+
+        function downloadTemplate(type) {
+            // 実際のダウンロード機能は制作ツールで使用する設定ファイルとして出力
+            const settings = {
+                type: type,
+                title: document.getElementById(type + 'TitleInput').value,
+                subtitle: document.getElementById(type + 'SubtitleInput').value,
+                backgroundColor: document.getElementById(type + 'BgColor').value,
+                logo: "コップ",
+                dimensions: "1080x1920",
+                duration: type === 'opening' ? "3-5秒" : "5-8秒"
+            };
+
+            if (type === 'ending') {
+                settings.cta = document.getElementById('endingCTAInput').value;
+            }
+
+            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(settings, null, 2));
+            const downloadAnchorNode = document.createElement('a');
+            downloadAnchorNode.setAttribute("href", dataStr);
+            downloadAnchorNode.setAttribute("download", `appsheet_${type}_template.json`);
+            document.body.appendChild(downloadAnchorNode);
+            downloadAnchorNode.click();
+            downloadAnchorNode.remove();
+
+            alert(`${type === 'opening' ? 'オープニング' : 'エンディング'}テンプレート設定をダウンロードしました！\n制作ツールでこの設定を参考に動画を作成してください。`);
+        }
+
+        // 初期化
+        document.addEventListener('DOMContentLoaded', function() {
+            updateOpening();
+            updateEnding();
+        });
+    </script>
+</body>
+</html>
