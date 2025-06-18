@@ -5,7 +5,7 @@
 
 /* ヒーローセクション */
 .hero-section {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #7acef0 0%, #1a73e8 100%);
   color: white;
   padding: 80px 0;
   text-align: center;
@@ -49,7 +49,7 @@
 }
 
 .appsheet-guide h2::after {
-  content: '';
+  content: "";
   display: block;
   width: 60px;
   height: 4px;
@@ -133,7 +133,7 @@
 }
 
 .capability-category li::before {
-  content: '✓';
+  content: "✓";
   position: absolute;
   left: 0;
   color: #667eea;
@@ -315,15 +315,15 @@
   .hero-content h1 {
     font-size: 2.2rem;
   }
-  
+
   .hero-subtitle {
     font-size: 1.1rem;
   }
-  
+
   .appsheet-guide h2 {
     font-size: 2rem;
   }
-  
+
   .features-grid,
   .capabilities-content,
   .benefits-grid,
@@ -331,12 +331,12 @@
   .process-steps {
     grid-template-columns: 1fr;
   }
-  
+
   .cta-buttons {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .btn {
     width: 200px;
   }
@@ -346,7 +346,7 @@
   .appsheet-guide section {
     padding: 40px 0;
   }
-  
+
   .feature-item,
   .capability-category,
   .benefit-item,

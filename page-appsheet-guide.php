@@ -13,9 +13,9 @@ get_header();
       <div class="hero-content">
         <h1>AppSheet とは？</h1>
         <p class="hero-subtitle">Googleが提供するノーコード・プラットフォームで、<br>誰でも簡単にモバイルアプリを作成できます</p>
-        <div class="hero-image">
+        <!-- <div class="hero-image">
           <img src="<?php echo get_template_directory_uri(); ?>/img/appsheet-hero.png" alt="AppSheetロゴ">
-        </div>
+        </div> -->
       </div>
     </div>
   </section>
