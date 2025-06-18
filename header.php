@@ -121,6 +121,7 @@
       <nav class="main-nav">
         <ul>
           <li><a href="<?php echo get_post_type_archive_link('demo_app'); ?>">デモアプリ一覧</a></li>
+          <li><a href="<?php echo esc_url(home_url('/appsheet-guide')); ?>">AppSheetとは</a></li>
           <li><a href="<?php echo esc_url( home_url( '/otoiawase' ) ); ?>">お問合せ</a></li>
         </ul>
       </nav>
