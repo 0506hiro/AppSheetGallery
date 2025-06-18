@@ -76,3 +76,31 @@ function get_contact_form_7_id_by_title( $title ) {
   }
   return null;
 }
+
+// Contact Form 7のセレクトボックスにデモアプリ一覧を動的に追加
+function add_demo_apps_to_contact_form($tag, $unused) {
+    if ($tag['name'] != 'demo-app') {
+        return $tag;
+    }
+    
+    $demo_apps = get_posts(array(
+        'post_type' => 'demo_app',
+        'posts_per_page' => -1,
+        'post_status' => 'publish',
+        'orderby' => 'title',
+        'order' => 'ASC'
+    ));
+    
+    $tag['raw_values'] = array('その他');
+    $tag['values'] = array('その他');
+    $tag['labels'] = array('その他');
+    
+    foreach($demo_apps as $app) {
+        $tag['raw_values'][] = $app->post_title;
+        $tag['values'][] = $app->post_title;
+        $tag['labels'][] = $app->post_title;
+    }
+    
+    return $tag;
+}
+add_filter('wpcf7_form_tag', 'add_demo_apps_to_contact_form', 10, 2);
