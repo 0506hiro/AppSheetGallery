@@ -13,7 +13,6 @@
           if ( $demo_url ) :
         ?>
           <div class="demo-url-section">
-            <h3>デモページにアクセス</h3>
             <a href="<?php echo esc_url( $demo_url ); ?>" target="_blank" class="demo-access-button">
               デモを試す
             </a>
