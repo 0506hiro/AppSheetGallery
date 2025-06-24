@@ -232,7 +232,7 @@
   justify-content: center;
   width: 60px;
   height: 60px;
-  background: #667eea;
+  background: #1a73e8;
   color: white;
   border-radius: 50%;
   font-size: 1.5rem;
@@ -253,7 +253,7 @@
 
 /* CTAセクション */
 .cta-section {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #7acef0 0%, #1a73e8 100%);
   color: white;
   text-align: center;
 }
