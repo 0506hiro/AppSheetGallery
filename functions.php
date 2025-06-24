@@ -104,3 +104,65 @@ function add_demo_apps_to_contact_form($tag, $unused) {
     return $tag;
 }
 add_filter('wpcf7_form_tag', 'add_demo_apps_to_contact_form', 10, 2);
+
+
+// デモURL用のメタボックスを追加
+function add_demo_url_meta_box() {
+    add_meta_box(
+        'demo_url_meta_box',
+        'デモURL設定',
+        'demo_url_meta_box_callback',
+        'demo_app', // demo_appカスタム投稿タイプ（適宜変更してください）
+        'normal',
+        'high'
+    );
+}
+add_action('add_meta_boxes', 'add_demo_url_meta_box');
+
+// メタボックスの内容を表示
+function demo_url_meta_box_callback($post) {
+    wp_nonce_field('demo_url_meta_box_nonce', 'demo_url_meta_box_nonce');
+    $demo_url = get_post_meta($post->ID, '_demo_url', true);
+    ?>
+    <table class="form-table">
+        <tr>
+            <th><label for="demo_url">デモページURL</label></th>
+            <td>
+                <input type="url" 
+                       id="demo_url" 
+                       name="demo_url" 
+                       value="<?php echo esc_attr($demo_url); ?>" 
+                       style="width: 100%; max-width: 400px;" 
+                       placeholder="https://example.com/demo">
+                <p class="description">デモページにアクセスするためのURLを入力してください。</p>
+            </td>
+        </tr>
+    </table>
+    <?php
+}
+
+// デモURLを保存
+function save_demo_url_meta_box($post_id) {
+    // nonce チェック
+    if (!isset($_POST['demo_url_meta_box_nonce']) || 
+        !wp_verify_nonce($_POST['demo_url_meta_box_nonce'], 'demo_url_meta_box_nonce')) {
+        return;
+    }
+    
+    // 自動保存時は何もしない
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+        return;
+    }
+    
+    // 権限チェック
+    if (!current_user_can('edit_post', $post_id)) {
+        return;
+    }
+    
+    // デモURLを保存
+    if (isset($_POST['demo_url'])) {
+        $demo_url = sanitize_url($_POST['demo_url']);
+        update_post_meta($post_id, '_demo_url', $demo_url);
+    }
+}
+add_action('save_post', 'save_demo_url_meta_box');

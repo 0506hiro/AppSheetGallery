@@ -7,6 +7,42 @@
   gap: 40px;
 }
 
+/* デモURL表示エリア */
+.demo-url-section {
+  margin: 20px 0;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #007cba;
+}
+
+.demo-url-section h3 {
+  margin: 0 0 15px 0;
+  color: #333;
+  font-size: 18px;
+}
+
+.demo-access-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #007cba;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.demo-access-button:hover {
+  background: #005a87;
+  color: #fff;
+}
+
+.demo-access-button:before {
+  content: "🚀 ";
+  margin-right: 5px;
+}
+
 @media (max-width: 428px) {
   .demo-single {
     flex-direction: column;
@@ -22,6 +58,16 @@
     max-width: none;
     border: none;
     border-radius: 0;
+  }
+  .demo-url-section {
+    margin: 15px 0;
+    padding: 15px;
+  }
+
+  .demo-access-button {
+    display: block;
+    text-align: center;
+    padding: 15px;
   }
 }
 

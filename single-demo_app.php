@@ -4,21 +4,36 @@
     <article class="demo-single">
     <div class="demo-single">
       <div class="demo-content-wrapper">
-<h1 class="demo-title"><?php the_title(); ?></h1>
+        <h1 class="demo-title"><?php the_title(); ?></h1>
         <div class="demo-content"><?php the_content(); ?></div>
+        
+        <?php
+          // デモURLの表示
+          $demo_url = get_post_meta( get_the_ID(), '_demo_url', true );
+          if ( $demo_url ) :
+        ?>
+          <div class="demo-url-section">
+            <h3>デモページにアクセス</h3>
+            <a href="<?php echo esc_url( $demo_url ); ?>" target="_blank" class="demo-access-button">
+              デモを試す
+            </a>
+          </div>
+        <?php endif; ?>
       </div>
+      
       <?php
         $demo_video = get_post_meta( get_the_ID(), '_demo_video', true );
         if ( $demo_video ) :
       ?>
         <div class="demo-video">
-          <video width="320" height="180" controls>
+          <video width="320" height="180" controls autoplay muted loop>
             <source src="<?php echo esc_url( $demo_video ); ?>" type="video/mp4">
             Your browser does not support the video tag.
           </video>
         </div>
       <?php endif; ?>
     </div>
+    </article>
   <?php endwhile; endif; ?>
 </main>
 <?php get_footer(); ?>
